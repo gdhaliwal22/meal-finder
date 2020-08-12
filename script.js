@@ -58,6 +58,19 @@ function getMealByID(mealID) {
 }
 
 // Add meal to DOM
+function addMealToDOM(meal) {
+  const ingredients = [];
+
+  for (let i = 1; i <= 20; i++) {
+    if (meal[`strIngredients${i}`]) {
+      ingredients.push(
+        `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+      );
+    } else {
+      break;
+    }
+  }
+}
 
 // Event listeners
 submit.addEventListener("submit", searchMeal);
